@@ -16,7 +16,8 @@ jobs:
           node-version: "20"
       # Pick your own package manager and build script
       - run: bun install
-      - run: bun run build --preset github_pages
+      # NUXT_APP_BASE_URL=/<repository>/ npx nuxt build --preset github_pages
+      - run: NUXT_APP_BASE_URL=refactored-fishstick bun run build --preset github_pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
